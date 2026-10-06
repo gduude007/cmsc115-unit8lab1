@@ -69,26 +69,26 @@ https://github.com/gduude007/cmsc115-unit8lab1
 # Overall Reflection
 
 ## Which task was the easiest to fix? Why?
--
+- Task 1 was the easiest. Once the tests showed the expected outputs, it was clear the labels were swapped, and the boundary fix only required changing two comparison operators.
 
 ## Which task was the most difficult? Why?
--
+- Task 3 was the most difficult because the code looked correct at first glance and most of its tests passed. I had to look closely at the inputs of the failing test to find the one case the method did not handle. Task 2 was also tricky because its second bug stayed hidden until the first one was fixed.
 
 ## How did Git help you track your progress through the debugging process?
--
+- Each task had its own commit, so the history on GitHub shows a clear record of what changed and when. If a fix had broken something, I could have compared it to the previous commit or rolled it back without losing my other work.
 
 ## Why is it important to make small, frequent commits when debugging code?
--
+- Small commits keep each change focused on one problem, which makes it easier to understand, review, and undo if needed. If a new bug appears, it is much easier to find which change caused it when each commit contains only one fix.
 
 ## What did you learn about using JUnit tests to guide debugging?
--
+- Tests define what the code is supposed to do, so they take the guesswork out of debugging. Running them before and after each change showed me exactly what was broken and confirmed when the fix was correct. I also learned to re-run tests after every change, because one bug can hide another, and a test can pass by accident when two bugs cancel each other out.
 
 ---
 
 # Commit 5: Final Reflection
 
 ## What did you complete or update before making this final commit?
--
+- I completed the Overall Reflection section, checked that my name and GitHub repository URL were entered, and made sure the reflections for all three tasks were filled in.
 
 ## Why is it useful to document your work after completing a programming task?
--
+- Documentation explains why changes were made, not just what changed. It helps other developers (and my future self) understand the reasoning behind the fixes, and writing it out helped me review what I learned during the lab.
