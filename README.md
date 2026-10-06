@@ -1,36 +1,36 @@
 # Lab Reflection: Git Version Control + Debugging (BuggyProgram)
 
 ## Student Name
-Enter your name here.
+Juan A. Pacheco Fuentes
 
 ## GitHub Repository URL
-Paste your GitHub repository URL here.
+https://github.com/gduude007/cmsc115-unit8lab1
 
 ---
 
 # Commit 1: Initial Commit
 
 ## What did you include in this commit?
--
+- The original starter project: BuggyProgram.java with its three unmodified methods (getGrade, sumEvenNumbers, and sumRange), the JUnit test classes Task1Test, Task2Test, and Task3Test, and this README.md file.
 
 ## What was the purpose of this commit?
--
+- To save a baseline version of the project before making any changes. This gives me a starting point I can compare against or return to if a fix goes wrong, and it lets the commit history show exactly what changed in each task.
 
 ---
 
 # Commit 2: Task 1 (getGrade)
 
 ## Which tests in Task1Test were failing before your fix?
--
+- Three of the five tests failed: highScoreExceeds (95 returned "Meets" instead of "Exceeds"), middleScoreMeets (85 returned "Exceeds" instead of "Meets"), and eightyIsMeets (80 returned "Does Not Meet" instead of "Meets"). ninetyIsExceeds passed only by accident: 90 skipped the first branch and landed in the second one, which wrongly returned "Exceeds".
 
 ## What was the issue in the code?
--
+- The return values for the top two categories were swapped, so the highest scores were labeled "Meets" and the middle scores were labeled "Exceeds." The conditions also used "greater than" (score > 90 and score > 80), so a score of exactly 90 or exactly 80 was placed in the category below where it belonged.
 
 ## What change did you make to fix it?
--
+- I swapped the return values so the first branch returns "Exceeds" and the nested branch returns "Meets." I also changed the comparisons to "greater than or equal to" (score >= 90 and score >= 80) so the boundary scores are included in the correct category.
 
 ## How did the tests help guide your fix?
--
+- The failing tests showed the expected value next to the actual value, which made it clear that the labels were reversed. The boundary test cases showed exactly where each category should start, which I could not have known just from reading the method. They also showed that a passing test does not always mean the code is correct, since the 90 test passed only because two bugs cancelled each other out.
 
 ---
 

@@ -1,12 +1,14 @@
 public class BuggyProgram {
 
     // Method 1: nested conditionals
+    // Fixes: the "Exceeds" and "Meets" labels were swapped, and the
+    // boundaries now include 90 and 80 (>= instead of >).
     public static String getGrade(int score) {
-        if (score > 90) {
-            return "Meets";
+        if (score >= 90) {
+            return "Exceeds";
         } else {
-            if (score > 80) {
-                return "Exceeds";
+            if (score >= 80) {
+                return "Meets";
             } else {
                 return "Does Not Meet";
             }
