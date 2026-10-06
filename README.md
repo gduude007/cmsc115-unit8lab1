@@ -37,16 +37,16 @@ https://github.com/gduude007/cmsc115-unit8lab1
 # Commit 3: Task 2 (sumEvenNumbers)
 
 ## Which tests in Task2Test were failing before your fix?
--
+- All four tests failed: mixedValues, allOddValues, emptyArray, and negativeEvenValues. Every one threw an ArrayIndexOutOfBoundsException before the method could return a result. After I fixed the loop, all four still failed because every sum was one too high (for example, mixedValues expected 12 but got 13).
 
 ## What was the issue in the code?
--
+- There were two problems. The loop condition was i <= values.length, which tried to access one index past the end of the array and caused the exception. The sum variable also started at 1 instead of 0, so even after the loop was fixed, every result was one too high.
 
 ## What change did you make to fix it?
--
+- I changed the loop condition to i < values.length so it only visits valid indexes, and I changed the starting value of sum from 1 to 0.
 
 ## How did the tests help guide your fix?
--
+- The exception in the test output pointed directly to the loop condition, and the index it reported was always equal to the array length. Once that was fixed, re-running the tests showed that every result was off by exactly one, which led me to the incorrect starting value of sum. The second bug was hidden behind the first one until I fixed the loop and ran the tests again.
 
 ---
 
