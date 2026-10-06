@@ -53,16 +53,16 @@ https://github.com/gduude007/cmsc115-unit8lab1
 # Commit 4: Task 3 (sumRange)
 
 ## Which tests in Task3Test were failing before your fix?
--
+- Only reversedRange failed. It called sumRange(5, 1) and expected 15, but the method returned 0. The other three tests (normalRange, singleValueRange, and rangeWithNegatives) already passed.
 
 ## What was the issue in the code?
--
+- The loop only runs while i <= end, so when start was greater than end, the loop never ran and the method returned 0 instead of the sum of the numbers in the range.
 
 ## What change did you make to fix it?
--
+- I added a check at the beginning of the method: if start is greater than end, the two values are swapped before the loop runs. This way the method adds every number in the range no matter which order the bounds are given in.
 
 ## How did the tests help guide your fix?
--
+- The tests with normal ranges already passed, so the method worked in most cases. Looking at the inputs of the failing test showed that the problem only happened when the bounds were reversed, which narrowed the fix down to handling that one situation.
 
 ---
 

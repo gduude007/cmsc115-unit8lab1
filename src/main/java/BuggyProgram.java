@@ -31,7 +31,15 @@ public class BuggyProgram {
     }
 
     // Method 3: loop with bounds (no array)
+    // Fix: if start is greater than end, the bounds are swapped so the
+    // loop still adds every number in the range (inclusive).
     public static int sumRange(int start, int end) {
+        if (start > end) {
+            int temp = start;
+            start = end;
+            end = temp;
+        }
+
         int sum = 0;
 
         for (int i = start; i <= end; i++) {
